@@ -4,7 +4,8 @@
   "description": "React test for Honeywell/Sequoia",
   "main": "index.jsx",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --config webpack.dev.js --open --mode=development",
+    "build": "webpack --config webpack.build.js --progress --mode=production"
   },
   "repository": {
     "type": "git",
@@ -17,11 +18,53 @@
   },
   "homepage": "https://github.com/jc09987/HoneywellExam#readme",
   "dependencies": {
+    "@babel/runtime": "^7.10.1",
+    "autodll-webpack-plugin": "^0.4.2",
+    "autoprefixer": "^9.6.1",
+    "compression-webpack-plugin": "^3.0.0",
+    "css-url-relative-plugin": "^1.0.0",
+    "cssnano": "^4.1.10",
+    "filemanager-webpack-plugin": "^2.0.5",
+    "html-react-parser": "^0.9.1",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.7.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "uuid": "^3.3.2"
+    "uuid": "^3.3.2",
+    "webpack": "^4.35.2",
+    "webpack-bundle-analyzer": "^3.6.0",
+    "webpack-serve": "^3.1.0"
   },
   "devDependencies": {
-    "jest": "^23.6.0"
+    "@babel/core": "^7.5.0",
+    "@babel/plugin-proposal-class-properties": "^7.5.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.5.0",
+    "@babel/plugin-transform-runtime": "^7.10.1",
+    "@babel/preset-env": "^7.5.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-transform-imports": "^2.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "css-loader": "^1.0.1",
+    "exports-loader": "^0.7.0",
+    "file-loader": "^4.2.0",
+    "html-loader": "^0.5.5",
+    "imports-loader": "^0.8.0",
+    "node-sass": "^4.12.0",
+    "postcss-loader": "^3.0.0",
+    "resolve-url-loader": "^3.1.0",
+    "sass-loader": "^7.3.1",
+    "style-loader": "^0.23.1",
+    "jest": "^23.6.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "url-loader": "^2.1.0",
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.2"
   }
 }
