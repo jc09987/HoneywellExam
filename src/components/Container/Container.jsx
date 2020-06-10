@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import uuidv4 from 'uuid/v4';
 import { connect } from 'react-redux';
 
-import { fetchStudents, addStudent, deleteStudent } from './actions/containerActions';
+import { fetchContent, addStudent, deleteStudent } from './actions/containerActions';
 import TableContainer from '../Table/TableContainer';
-import Alert from '../Alert/Alert';
+import Alert from 'components/Alert/Alert';
 
 import '../../../css/global.css';
 
@@ -19,7 +19,7 @@ class Container extends PureComponent {
 
   componentDidMount = () => {
     const { dispatch } = this.props;
-    dispatch(fetchStudents());
+    dispatch(fetchContent());
   }
 
   sendNewStudent = (student) => { 
@@ -40,10 +40,7 @@ class Container extends PureComponent {
 
   studentDetails= (id) => {
     const { showDetails } = this.props;
-
-    showDetails({
-      studentId: id,
-    });
+    showDetails(id);
   }
 
   sendDeletedStudent = (id, name) => {
@@ -60,7 +57,6 @@ class Container extends PureComponent {
 
   render = () => {
     const { error, loading, content } = this.props;
-
     if (loading) {
       return (
         <Alert

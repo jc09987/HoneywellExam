@@ -1,0 +1,14 @@
+{
+  "name": "mock",
+  "version": "1.0.0",
+  "description": "ready-room mock server",
+  "main": "index.js",
+  "repository": "https://github.com/wn-doolittle/doolittle-ready-room",
+  "author": "Juan Carlos Garcia-Ramirez",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1"
+  }
+}

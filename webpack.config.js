@@ -124,8 +124,7 @@ const config = {
   optimization: {
     minimizer: [
       new UglifyJsPlugin({
-        parallel: true,
-        cache: true
+        parallel: true
       }),
       new OptimizeCssAssetsPlugin({}),
     ]
