@@ -1,8 +1,8 @@
 import {
-  FETCH_CONTENT_BEGIN,
-  FETCH_CONTENT_SUCCESS,
-  FETCH_CONTENT_FAILURE
-} from "../actions/appActions";
+  FETCH_STUDENTS_BEGIN,
+  FETCH_STUDENTS_SUCCESS,
+  FETCH_STUDENTS_FAILURE
+} from "../actions/containerActions";
 
 const initialState = {
   content: {},
@@ -12,21 +12,21 @@ const initialState = {
 
 export default function appReducer(state = initialState, action) {
   switch (action.type) {
-    case FETCH_CONTENT_BEGIN:
+    case FETCH_STUDENTS_BEGIN:
       return {
         ...state,
         loading: true,
         error: null
       };
 
-    case FETCH_CONTENT_SUCCESS:
+    case FETCH_STUDENTS_SUCCESS:
       return {
         ...state,
         loading: false,
         content: action.payload.data
       };
 
-    case FETCH_CONTENT_FAILURE:
+    case FETCH_STUDENTS_FAILURE:
       return {
         ...state,
         loading: false,
