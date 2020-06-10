@@ -2,7 +2,7 @@
   "name": "honeywellexam",
   "version": "1.0.0",
   "description": "React test for Honeywell/Sequoia",
-  "main": "index.jsx",
+  "main": "src/index.jsx",
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js --open --mode=development",
     "build": "webpack --config webpack.build.js --progress --mode=production"
@@ -32,6 +32,9 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-redux": "^7.1.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
     "uuid": "^3.3.2",
     "webpack": "^4.35.2",
     "webpack-bundle-analyzer": "^3.6.0",
