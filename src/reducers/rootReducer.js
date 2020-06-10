@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import appReducer from "components/App/reducers/appReducer";
+import containerReducer from "components/Container/reducers/containerReducer";
 
 export default combineReducers({
-  content: appReducer
+  content: containerReducer
 });

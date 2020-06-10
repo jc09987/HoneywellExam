@@ -1,16 +1,32 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import { Switch, Route, withRouter } from 'react-router-dom';
+
+import Container from './Container';
 
 /**
  * Root component of the tree.
  */
 class App extends PureComponent {
-  render = () => {
-    return (
-      <div id="main-app">
-        React App!
-      </div>
-    );
-  };
+  render = () => (
+    <div>
+      <Switch>
+        <Route
+          path="/"
+          render={
+              () => (
+                <Container />
+              )
+            }
+        />
+      </Switch>
+    </div>
+  )
 }
 
-export default App;
+App.propTypes = {
+  history: PropTypes.instanceOf(Object).isRequired
+};
+
+export default withRouter(App);
+
