@@ -4,7 +4,8 @@ import SearchField from 'react-search-field';
 import { Button } from 'reactstrap';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
-import ActionIcon from './ActionIcon';
+import ActionIcon from 'components/Icon/ActionIcon';
+import { isObjNotEmpty  } from '../../../js/utils';
 
 class TableContainer extends PureComponent {
   constructor(props) {
@@ -31,10 +32,11 @@ class TableContainer extends PureComponent {
   }
 
   filterContent = (students) => { 
+    console.log(students);
     const { searchText } = this.state;
     return students.filter(
         student => (
-        `${student.name}${student.grade}`.toLowerCase().indexOf(searchText.toLowerCase()) > -1
+        `${student.firstname}${student.lastname}`.toLowerCase().indexOf(searchText.toLowerCase()) > -1
       )
     );
   }
@@ -43,11 +45,29 @@ class TableContainer extends PureComponent {
     const { content } = this.props;
     let filteredContent = [];
 
-    if (content) {
-        filteredContent = this.filterContent(content);
+    if (content && isObjNotEmpty(content)) {
+        filteredContent = this.filterContent(content.content);
     }
 
     const columns = [{
+        id: 'id',
+        Header: 'ID',
+        headerStyle: {
+          textAlign: 'left',
+          fontWeight: 600
+        },
+        accessor: 'id',
+        resizable: false,
+        Cell: row => (
+          <Button
+            color="link"
+            className="link-button"
+            onClick={() => this.handleDetails(row.original.id)}
+          >
+            {row.value}
+          </Button>
+        )
+      }, {
       id: 'firstname',
       Header: 'First Name',
       headerStyle: {
@@ -56,15 +76,6 @@ class TableContainer extends PureComponent {
       },
       accessor: 'firstname',
       resizable: false,
-      Cell: row => (
-        <Button
-          color="link"
-          className="link-button"
-          onClick={() => this.handleDetails(row.original.id)}
-        >
-          {row.value}
-        </Button>
-      )
     }, {
       id: 'lastname',
       Header: 'Last Name',
@@ -77,7 +88,7 @@ class TableContainer extends PureComponent {
       resizable: false
     }, {
       id: 'address',
-      Header: 'Street Number/Name',
+      Header: 'Street Name',
       headerStyle: {
         textAlign: 'left',
         fontWeight: 600

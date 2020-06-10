@@ -25,7 +25,8 @@ config.plugins = config.plugins.concat(
   }),
   new webpack.DefinePlugin({
     "process.env": {
-      NODE_ENV: JSON.stringify("development")
+      NODE_ENV: JSON.stringify("development"),
+      STUDENTS_API_URL: JSON.stringify('/mock/students')
     }
   })
 );

@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Switch, Route, withRouter } from 'react-router-dom';
 
-import Container from './Container';
+import Container from 'components/Container/Container';
 
 /**
  * Root component of the tree.
