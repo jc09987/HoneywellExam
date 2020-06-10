@@ -1,0 +1,27 @@
+{
+  "name": "honeywellexam",
+  "version": "1.0.0",
+  "description": "React test for Honeywell/Sequoia",
+  "main": "index.jsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jc09987/HoneywellExam.git"
+  },
+  "author": "Juan Carlos Garcia-Ramirez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jc09987/HoneywellExam/issues"
+  },
+  "homepage": "https://github.com/jc09987/HoneywellExam#readme",
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}

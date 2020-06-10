@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## React App for Students!
 
 You can use the [editor on GitHub](https://github.com/jc09987/HoneywellExam/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
