@@ -1,0 +1,81 @@
+@import "~bootstrap/scss/bootstrap";
+
+@import "components/fonts";
+
+@import "components/colors";
+
+@import "components/variables";
+
+a {
+  text-decoration: none;
+  color: $bondi_blue;
+}
+
+button .reverse {
+  background-color: $summer_sky;
+  color: $white;
+}
+
+button.reverse:hover {
+  background-color: $very_light_grey;
+  color: $medium-blue;
+}
+
+.fas {
+  padding-right: 10px;
+}
+
+.modal-title {
+  font-size: 22px;
+}
+
+.dialog-form-label {
+  font-weight: bold;
+  display: block;
+}
+
+.form {
+  border-color: black;
+  border-width: 2px;
+  margin-bottom: 10px;
+}
+
+.input-label-row {
+  margin: 10px 0;
+}
+
+.centered {
+  margin: 0 25px;
+}
+
+.fullwidth {
+  width: 85%;
+  margin: 0 25px;
+  height: 35px;
+}
+
+.fullwidth-label {
+  margin: .2rem 25px;
+}
+
+.fullwidth-text {
+  margin: .2rem 25px;
+  font-size: 14px;
+}
+
+.searchbar {
+  margin: 15px 0 0 20px;
+}
+
+.react-search-field {
+  margin-left: 20px;
+}
+
+.rt-tr {
+  padding: .5rem 0;
+}
+
+.link-button {
+  padding: 0 0 0 10px;
+}
+  

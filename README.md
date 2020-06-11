@@ -1,37 +1,58 @@
-## Welcome to GitHub Pages
+# React App for Students!
 
-You can use the [editor on GitHub](https://github.com/jc09987/HoneywellExam/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## Environment setup
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### 1. Clone the repo 
 
-### Markdown
+### 2. Install all the required dependencies
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+     cd HoneywellExam/
+     npm install
 
-```markdown
-Syntax highlighted code block
+#### In Mac OS, if you see an error regarding `node-sass`, you must rebuild the package:
 
-# Header 1
-## Header 2
-### Header 3
+     npm rebuild node-sass
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
+### 3. Start the mock-server
 
-**Bold** and _Italic_ and `Code` text
+     cd /js/mock-server
+     node app.js
 
-[Link](url) and ![Image](src)
-```
+#### You should see this string in your terminal: `listening on port 5678!`
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### 4. Start the React app
 
-### Jekyll Themes
+#### 4.1 Local (the mock-server should be up and running)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/jc09987/HoneywellExam/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+     npm start
 
-### Support or Contact
+#### This will start a `webpack-dev-server` instance with the app running in: `http://local.mock.com:8080/`
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+#### 4.2 Generate bundle files
+
+     npm run build
+
+#### This will generate a webpack minified file: `bundle/app.bundle.js` that you can import as a single JS file through CDN.
+
+### 5. Run the components' documentation (storybook)  
+
+#### Run the following command
+
+     npm run styleguide
+
+#### This will start a `react-styleguidist-server` instance with the components' info in: `http://localhost:6060/` (webpack-dev-server should not be running)+
+
+## Linters and Tests
+
+### Run all the tests at once
+
+     cd HoneywellExam/
+     npm test
+
+#### This will invoke the 'jest' testing files and the linters (eslint for JS code and csslint for stylesheets):
+
+### Run only the linters
+
+     cd HoneywellExam/
+     npm run lint

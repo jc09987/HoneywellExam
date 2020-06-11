@@ -1,0 +1,61 @@
+@import "../../../../sass/components/colors";
+
+@import "../../../../sass/components/variables";
+
+.il-alerts {
+  font-size: 1.5rem;
+
+  @media screen and (min-width: $desktop) {
+
+    font-size: 2.1rem;
+  }
+
+  @media screen and (min-width: $wide-screen) {
+
+    font-size: 3rem;
+  }
+}
+
+.student-details {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  @media screen and (min-width: $tablet) {
+
+    display: flex;
+  }
+}
+
+.details-container {
+  margin: 50px;
+  width: auto;
+  display: block;
+  height: 100%;
+
+  @media screen and (min-width: $tablet) {
+
+    width: 40%;
+  }
+}
+
+.student-photo {
+  margin: 50px;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+
+  @media screen and (min-width: $tablet) {
+
+    width: 30%;
+    justify-content: flex-end;
+  }
+}
+
+.field {
+  margin: 10px 0;
+}
+
+.back-button {
+  margin: 35px 0;
+}
