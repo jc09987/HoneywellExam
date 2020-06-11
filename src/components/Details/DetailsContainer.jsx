@@ -1,20 +1,21 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable jsx-a11y/label-has-for */
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
 
+import Alert from 'components/Alert/Alert';
 import { fetchStudent } from './actions/detailActions';
 import styles from "./styles/details.module.scss";
-import Alert from 'components/Alert/Alert';
 
 import '../../../css/global.css';
 
+/**
+ * Container of a Student's details.
+ */
 class DetailsContainer extends PureComponent {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount = () => {
     const { studentId, dispatch } = this.props;
     dispatch(fetchStudent(studentId));
@@ -38,8 +39,7 @@ class DetailsContainer extends PureComponent {
       <div id="student-photo" className={styles.studentPhoto}>
         <img 
             src="http://icons.iconarchive.com/icons/webalys/kameleon.pics/256/Student-3-icon.png" 
-            alt="student">
-        </img>
+            alt="student" />
       </div>
       <div id="details-container" className={styles.detailsContainer}>
         {error
@@ -136,15 +136,25 @@ const mapStateToProps = state => ({
 });
 
 DetailsContainer.propTypes = {
+  /** student's object */
   student: PropTypes.instanceOf(Object),
+
+  /** student's ID */
+  studentId: PropTypes.number,
+
+  /** Redux loading state */
   loading: PropTypes.bool.isRequired,
+
+  /** Redux error */
   error: PropTypes.instanceOf(Object),
+
+  /** Redux function for actions */
   dispatch: PropTypes.func.isRequired,
-  showDetails: PropTypes.func.isRequired
 };
 
 DetailsContainer.defaultProps = {
   student: {},
+  studentId: 0,
   error: {}
 };
 

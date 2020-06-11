@@ -2,13 +2,16 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { fetchContent, addStudent, deleteStudent } from './actions/containerActions';
 import TableContainer from 'components/Table/TableContainer';
 import AddDialog from 'components/Dialog/AddDialog';
 import Alert from 'components/Alert/Alert';
+import { fetchContent, addStudent, deleteStudent } from './actions/containerActions';
 
 import '../../../css/global.css';
 
+/**
+ * Container of the Student's list.
+ */
 class Container extends PureComponent {
   componentDidMount = () => {
     const { dispatch } = this.props;
@@ -19,7 +22,7 @@ class Container extends PureComponent {
     const { dispatch } = this.props;
     dispatch(addStudent(student)).then(() => {
       if (process.env.RR_ENV === 'production') {
-        dispatch(fetchStudents());
+        dispatch(fetchContent());
       }
     });
   }
@@ -35,7 +38,7 @@ class Container extends PureComponent {
     if (window.confirm(`Are you sure you want to delete [${id}]?`)) {
       dispatch(deleteStudent(id)).then(() => {
         if (process.env.RR_ENV === 'production') {
-          dispatch(fetchStudents());
+          dispatch(fetchContent());
         }
       });
     }
@@ -85,10 +88,19 @@ const mapStateToProps = state => ({
 });
 
 Container.propTypes = {
+  /** student's object */
   content: PropTypes.instanceOf(Object),
+
+  /** Redux loading state */
   loading: PropTypes.bool.isRequired,
+
+  /** Redux error */
   error: PropTypes.instanceOf(Object),
+
+  /** Redux function for actions */
   dispatch: PropTypes.func.isRequired,
+
+  /** Details' callback */
   showDetails: PropTypes.func.isRequired
 };
 

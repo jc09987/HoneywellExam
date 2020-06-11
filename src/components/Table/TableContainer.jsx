@@ -5,10 +5,13 @@ import { Button } from 'reactstrap';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 
-import styles from "./styles/table.module.scss";
 import ActionIcon from 'components/Icon/ActionIcon';
+import styles from "./styles/table.module.scss";
 import { isObjNotEmpty  } from '../../../js/utils';
 
+/**
+ * Table Container.
+ */
 class TableContainer extends PureComponent {
   constructor(props) {
     super(props);
@@ -145,8 +148,13 @@ class TableContainer extends PureComponent {
 }
 
 TableContainer.propTypes = {
+  /** Function to send data to the API */
   content: PropTypes.instanceOf(Object),
+
+  /** Function to check a student's details */
   handleDetails: PropTypes.func.isRequired,
+
+  /** Function to handle deletion of students */
   handleDelete: PropTypes.func.isRequired
 };
 
