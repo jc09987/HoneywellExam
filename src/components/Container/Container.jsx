@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import uuidv4 from 'uuid/v4';
 import { connect } from 'react-redux';
 
 import { fetchContent, addStudent, deleteStudent } from './actions/containerActions';

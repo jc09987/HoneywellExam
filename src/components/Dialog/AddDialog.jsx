@@ -104,10 +104,10 @@ class AddDialog extends PureComponent {
                 />
                 )
               }
-              <div>
+              <div className={styles.field}>
                 <label id="reruired-label" className="dialog-form-label">(* Required)</label>
               </div>
-              <div>
+              <div className={styles.field}>
                 <label id="firstname-label" className="dialog-form-label" htmlFor="firstname">First Name*: </label>
                 <input
                     type="text"
@@ -119,7 +119,7 @@ class AddDialog extends PureComponent {
                     onChange={this.handleChange}
                 />
               </div>
-              <div>
+              <div className={styles.field}>
                 <label id="lastname-label" className="dialog-form-label" htmlFor="lastname">Last Name*: </label>
                 <input
                     type="text"
@@ -131,7 +131,7 @@ class AddDialog extends PureComponent {
                     onChange={this.handleChange}
                 />
               </div>
-              <div>
+              <div className={styles.field}>
                 <label id="address-label" className="dialog-form-label" htmlFor="address">Street Name/Number*: </label>
                 <input
                     type="text"
@@ -143,7 +143,7 @@ class AddDialog extends PureComponent {
                     onChange={this.handleChange}
                 />
               </div>
-              <div>
+              <div className={styles.field}>
                 <label id="city-label" className="dialog-form-label" htmlFor="city">City*: </label>
                 <input
                     type="text"
@@ -155,7 +155,7 @@ class AddDialog extends PureComponent {
                     onChange={this.handleChange}
                 />
               </div>
-              <div>
+              <div className={styles.field}>
                 <label id="phone-label" className="dialog-form-label" htmlFor="phone">Phone Number*: </label>
                 <input
                     type="text"
@@ -167,7 +167,7 @@ class AddDialog extends PureComponent {
                     onChange={this.handleChange}
                 />
               </div>
-              <div>
+              <div className={styles.field}>
                 <label id="gpa-label" className="dialog-form-label" htmlFor="gpa">GPA*: </label>
                 <input
                     type="number"

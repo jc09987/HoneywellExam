@@ -87,24 +87,6 @@ class TableContainer extends PureComponent {
       accessor: 'lastname',
       resizable: false
     }, {
-      id: 'address',
-      Header: 'Street Name',
-      headerStyle: {
-        textAlign: 'left',
-        fontWeight: 600
-      },
-      accessor: 'address',
-      resizable: false
-    }, {
-      id: 'city',
-      Header: 'City',
-      headerStyle: {
-        textAlign: 'left',
-        fontWeight: 600
-      },
-      accessor: 'city',
-      resizable: false
-    }, {
       id: 'phone',
       Header: 'Phone Number',
       headerStyle: {

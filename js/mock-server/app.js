@@ -107,6 +107,13 @@ app.get('/mock/students', (req, res) => {
   res.send(studentsData);
 });
 
+app.get('/mock/students/student/:id', (req, res) => {
+  let studentHelper = studentsData.content.filter(student => {
+    return student ? parseInt(student.id) === parseInt(req.params.id) : null
+  });
+  res.send(studentHelper[0]);
+});
+
 app.post('/mock/students', (req, res) => {
   const createdStudent = {
     id: Math.floor(Math.random() * 90000) + 10000,
