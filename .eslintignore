@@ -2,3 +2,4 @@
 /bundle/**
 /js/mock-server/**
 /src/index.jsx
+__tests__

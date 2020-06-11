@@ -7,7 +7,6 @@ drush
 console
 .vagrant
 .DS_Store
-*.css
 *.sql
 *.tar.gz
 *.css.map

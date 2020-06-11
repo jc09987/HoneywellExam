@@ -5,7 +5,7 @@ import { Button } from 'reactstrap';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 
-import ActionIcon from 'components/Icon/ActionIcon';
+import ActionIcon from 'components/Icons/ActionIcon';
 import styles from "./styles/table.module.scss";
 import { isObjNotEmpty  } from '../../../js/utils';
 
