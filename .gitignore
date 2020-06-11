@@ -24,7 +24,7 @@ web/sites/default/files
 .idea
 
 #Ignore node modules and bundle files
-node_modules
+node_modules/
 bundle/
 
 

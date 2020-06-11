@@ -49,6 +49,7 @@ class App extends PureComponent {
 }
 
 App.propTypes = {
+  /** React router object */
   history: PropTypes.instanceOf(Object).isRequired
 };
  

@@ -1,13 +1,18 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable jsx-a11y/label-has-for */
 import React, { PureComponent, createRef } from 'react';
 import PropTypes from 'prop-types';
 import {
   Button, Modal, ModalHeader, ModalBody, ModalFooter
 } from 'reactstrap';
 
+import Alert from 'components/Alert/Alert';
 import styles from "./styles/dialog.module.scss";
 import { validateFields } from '../../../js/utils';
-import Alert from 'components/Alert/Alert';
 
+/**
+ * Modal to add Students.
+ */
 class AddDialog extends PureComponent {
   constructor(props) {
     super(props);
@@ -70,11 +75,11 @@ class AddDialog extends PureComponent {
       this.setState({ alert: true });
     } else {
       const newStudent = {
-        firstname: firstname,
-        lastname: lastname,
-        address: address,
-        city: city,
-        phone: phone,
+        firstname,
+        lastname,
+        address,
+        city,
+        phone,
         gpa: parseFloat(gpa),
       }
       sendData(newStudent);
@@ -196,21 +201,8 @@ class AddDialog extends PureComponent {
 }
 
 AddDialog.propTypes = {
-  id: PropTypes.string.isRequired,
-  title: PropTypes.string,
-  pathName: PropTypes.string,
-  grade: PropTypes.string,
-  pathId: PropTypes.any, // eslint-disable-line react/forbid-prop-types
-  createUnit: PropTypes.bool,
+  /** Function to send data to the API */
   sendData: PropTypes.func.isRequired
-};
-
-AddDialog.defaultProps = {
-  createUnit: false,
-  title: '',
-  pathName: '',
-  grade: '',
-  pathId: 0
 };
 
 export default AddDialog;
