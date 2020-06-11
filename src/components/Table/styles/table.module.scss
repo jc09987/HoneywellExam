@@ -1,0 +1,30 @@
+.list-page {
+  font-size: 16px;
+  padding: 30px;
+
+  .search-bar {
+
+    input {
+      padding: 0 10px !important;
+    }
+  }
+}
+
+.list-page .students-table {
+  margin: 10px 20px;
+  border-collapse: collapse;
+  background-color: #F5F5F2;
+}
+
+.list-page table th {
+  padding: 12px;
+  text-align: left;
+}
+
+.list-page table td {
+  text-align: left;
+}
+  
+.list-page .link-button {
+  padding: 0 0 0 10px;
+}

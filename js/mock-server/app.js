@@ -92,7 +92,7 @@ const studentsData = {
       gpa: 4.1
     },
     {
-      id: 10004,
+      id: 10013,
       firstname: 'Moises',
       lastname: 'Garcia',
       address: 'Calle 13 #65',
@@ -110,12 +110,12 @@ app.get('/mock/students', (req, res) => {
 app.post('/mock/students', (req, res) => {
   const createdStudent = {
     id: Math.floor(Math.random() * 90000) + 10000,
-    firstname: req.firstname,
-    lastname: req.lastname,
-    address: req.address,
-    city: req.city,
-    phone: req.phone,
-    gpa: req.gpa
+    firstname: req.body.firstname,
+    lastname: req.body.lastname,
+    address: req.body.address,
+    city: req.body.city,
+    phone: req.body.phone,
+    gpa: req.body.gpa
   };
   res.send(createdStudent);
 });

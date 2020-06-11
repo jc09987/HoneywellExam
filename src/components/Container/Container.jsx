@@ -4,19 +4,13 @@ import uuidv4 from 'uuid/v4';
 import { connect } from 'react-redux';
 
 import { fetchContent, addStudent, deleteStudent } from './actions/containerActions';
-import TableContainer from '../Table/TableContainer';
+import TableContainer from 'components/Table/TableContainer';
+import AddDialog from 'components/Dialog/AddDialog';
 import Alert from 'components/Alert/Alert';
 
 import '../../../css/global.css';
 
 class Container extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      uuid: ''
-    };
-  }
-
   componentDidMount = () => {
     const { dispatch } = this.props;
     dispatch(fetchContent());
@@ -31,22 +25,15 @@ class Container extends PureComponent {
     });
   }
 
-  showAddDialog = () => {
-    const uuid = uuidv4();
-    this.setState({
-      uuid
-    });
-  }
-
   studentDetails= (id) => {
     const { showDetails } = this.props;
     showDetails(id);
   }
 
-  sendDeletedStudent = (id, name) => {
+  sendDeletedStudent = (id) => {
     const { dispatch } = this.props;
     // eslint-disable-next-line no-alert
-    if (window.confirm(`Are you sure you want to delete [${name}]?`)) {
+    if (window.confirm(`Are you sure you want to delete [${id}]?`)) {
       dispatch(deleteStudent(id)).then(() => {
         if (process.env.RR_ENV === 'production') {
           dispatch(fetchStudents());
@@ -86,6 +73,7 @@ class Container extends PureComponent {
           handleDelete={this.sendDeletedStudent}
           handleDetails={this.studentDetails}
         />
+        <AddDialog sendData={this.sendNewStudent} />
       </div>
     );
   }

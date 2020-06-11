@@ -17,6 +17,7 @@ const initialState = {
 };
 
 export default function appReducer(state = initialState, action) {
+  const updatedState = state;
   switch (action.type) {
     case FETCH_CONTENT_BEGIN:
       return {
