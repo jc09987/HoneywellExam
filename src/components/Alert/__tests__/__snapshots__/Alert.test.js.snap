@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert component renders correctly (error) renders correctly 1`] = `
+<div
+  className="alert alert-danger"
+  id="error-alert"
+  role="alert"
+>
+  <strong>
+    Error!
+  </strong>
+   
+  oh snap!
+  .
+</div>
+`;
+
+exports[`Alert component renders correctly (info) renders correctly 1`] = `
+<div
+  className="alert alert-info"
+  id="info-alert"
+  role="alert"
+>
+  <strong>
+    Loading...
+  </strong>
+   
+  Fetching data...
+  .
+</div>
+`;
