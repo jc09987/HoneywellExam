@@ -4,6 +4,8 @@ import SearchField from 'react-search-field';
 import { Button } from 'reactstrap';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
+
+import styles from "./styles/table.module.scss";
 import ActionIcon from 'components/Icon/ActionIcon';
 import { isObjNotEmpty  } from '../../../js/utils';
 
@@ -32,7 +34,6 @@ class TableContainer extends PureComponent {
   }
 
   filterContent = (students) => { 
-    console.log(students);
     const { searchText } = this.state;
     return students.filter(
         student => (
@@ -61,7 +62,7 @@ class TableContainer extends PureComponent {
         Cell: row => (
           <Button
             color="link"
-            className="link-button"
+            className={styles.linkButton}
             onClick={() => this.handleDetails(row.original.id)}
           >
             {row.value}
@@ -84,7 +85,6 @@ class TableContainer extends PureComponent {
         fontWeight: 600
       },
       accessor: 'lastname',
-      minWidth: 40,
       resizable: false
     }, {
       id: 'address',
@@ -94,7 +94,6 @@ class TableContainer extends PureComponent {
         fontWeight: 600
       },
       accessor: 'address',
-      minWidth: 40,
       resizable: false
     }, {
       id: 'city',
@@ -104,7 +103,6 @@ class TableContainer extends PureComponent {
         fontWeight: 600
       },
       accessor: 'city',
-      minWidth: 50,
       resizable: false
     }, {
       id: 'phone',
@@ -123,7 +121,6 @@ class TableContainer extends PureComponent {
         fontWeight: 600
       },
       accessor: 'gpa',
-      minWidth: 50,
       resizable: false
     }, {
       id: 'actions',
@@ -132,14 +129,12 @@ class TableContainer extends PureComponent {
         textAlign: 'left',
         fontWeight: 600
       },
-      minWidth: 30,
       resizable: false,
       sortable: false,
       Cell: row => (
         <span>
           <ActionIcon
             key="row-icon-trash"
-            className="fas fa-trash"
             handleAction={() => this.handleDelete(row.original.id)}
           />
         </span>
@@ -147,11 +142,11 @@ class TableContainer extends PureComponent {
     }];
 
     return (
-      <div id="student-list">
+      <div id="student-list" className={styles.listPage}>
         <SearchField
           placeholder="Search..."
           onChange={this.setSearchText}
-          classNames=" searchbar"
+          className={styles.searchBar}
         />
         <ReactTable
           data={filteredContent}
@@ -160,7 +155,7 @@ class TableContainer extends PureComponent {
           minRows={7}
           pageSize={filteredContent.length}
           noDataText="No Students Found"
-          className="-striped -highlight units-table"
+          className={`-striped -highlight ${styles.studentsTable}`}
         />
       </div>
     );
