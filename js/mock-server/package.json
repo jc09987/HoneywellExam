@@ -1,9 +1,9 @@
 {
   "name": "mock",
   "version": "1.0.0",
-  "description": "ready-room mock server",
+  "description": "react-app mock server",
   "main": "index.js",
-  "repository": "https://github.com/wn-doolittle/doolittle-ready-room",
+  "repository": "https://github.com/jc09987/HoneywellExam#readme",
   "author": "Juan Carlos Garcia-Ramirez",
   "license": "MIT",
   "dependencies": {
