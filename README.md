@@ -56,3 +56,8 @@
 
      cd HoneywellExam/
      npm run lint
+
+### Run jest only
+
+     cd HoneywellExam/
+     npm run jest
